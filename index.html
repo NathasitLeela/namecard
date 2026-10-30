@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Nathasit Leelasiriwong Card</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap">
+<style>
+/* Layout: a wide navy card (name, gold title, gold rule, icon contact rows, bell curves on the right), then copy-able details and a scan-to-save QR below */
+:root{
+  --bg:#e9edf4; --surface:#ffffff; --ink:#141b2b; --muted:#5a6478; --line:#d4dae5; --accent:#2b5aa8;
+  --card:#14213a; --card-deep:#0e182c; --card-ink:#f2f4f8; --card-soft:#c9d2e3; --gold:#d1ae6a; --curve:#6f97d6;
+  --font:"Jost", "Futura", "Century Gothic", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0a101b; --surface:#131b2a; --ink:#e6ebf3; --muted:#98a3b8; --line:#243047; --accent:#7aa5ec; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0a101b; --surface:#131b2a; --ink:#e6ebf3; --muted:#98a3b8; --line:#243047; --accent:#7aa5ec; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.5}
+.wrap{max-width:760px;margin:0 auto;padding-block:32px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:22px}
+
+.card{position:relative;overflow:hidden;color:var(--card-ink);border-radius:10px;
+  background:radial-gradient(120% 140% at 15% 10%, var(--card) 0%, var(--card-deep) 100%);
+  padding:clamp(24px,6vw,52px) clamp(22px,6vw,56px);min-height:320px;
+  box-shadow:0 24px 50px -22px rgba(8,16,34,.7)}
+.card::before{content:"";position:absolute;inset:0;opacity:.06;pointer-events:none;
+  background-image:repeating-linear-gradient(0deg,#fff 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,#fff 0 1px,transparent 1px 4px)}
+.curves{position:absolute;right:0;top:12%;width:min(48%,380px);height:auto;pointer-events:none}
+.content{position:relative;display:grid;gap:12px;max-width:100%}
+.name{margin:0;font-weight:400;font-size:clamp(20px,4.6vw,36px);letter-spacing:.16em;text-transform:uppercase;line-height:1.15;text-wrap:balance}
+.role{font-weight:400;font-size:clamp(13px,2.4vw,18px);letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.org{font-weight:300;font-size:clamp(14px,2.3vw,18px);color:var(--card-soft);letter-spacing:.02em}
+.rule{width:56px;height:3px;background:var(--gold);border-radius:2px;margin:14px 0 10px}
+.contacts{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.contacts li{display:grid;grid-template-columns:24px 1fr;gap:16px;align-items:center;min-width:0}
+.contacts svg{width:22px;height:22px;color:var(--gold)}
+.contacts a,.contacts span{color:var(--card-ink);text-decoration:none;font-weight:300;font-size:clamp(14px,2.3vw,18px);overflow-wrap:anywhere;min-width:0}
+.contacts a:hover{color:var(--gold)}
+@media (max-width:560px){.curves{opacity:.45;width:70%;top:auto;bottom:6%}}
+
+.below{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start}
+@media (max-width:600px){.below{grid-template-columns:1fr}}
+.list{background:var(--surface);border:1px solid var(--line);border-radius:10px;display:grid;min-width:0}
+.row{display:grid;grid-template-columns:76px 1fr auto;align-items:center;gap:12px;padding:12px 16px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.v{min-width:0;overflow-wrap:anywhere;color:var(--ink)}
+.copy{font:inherit;font-size:13px;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:4px 12px;cursor:pointer}
+.copy:hover{border-color:var(--accent);color:var(--accent)}
+.copy:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.qrbox{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:grid;justify-items:center;gap:10px;text-align:center}
+#qr{width:150px;height:150px;background:#fff;border-radius:6px;padding:8px;display:grid;place-items:center}
+#qr svg{width:100%;height:100%}
+.qrbox p{margin:0;color:var(--muted);font-size:13px;max-width:170px}
+</style>
+
+<main class="wrap">
+  <section class="card" aria-label="Business card">
+    <div class="content">
+      <h1 class="name">Nathasit Leelasiriwong</h1>
+      <div class="role">Model Validator</div>
+      <div class="org">Kiatnakin Phatra Financial Group</div>
+      <div class="rule"></div>
+      <ul class="contacts">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 6l8.5 7 8.5-7"/></svg><a href="mailto:nathasitlee@gmail.com">nathasitlee@gmail.com</a></li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/></svg><a href="tel:+66863866210">+66 86 386 6210</a></li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 3h16a1 1 0 011 1v16a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1zm3.3 6.9H5.5V18h1.8zM6.4 6a1.05 1.05 0 100 2.1 1.05 1.05 0 000-2.1zM18.5 13.3c0-2.2-1.2-3.5-3-3.5a2.6 2.6 0 00-2.3 1.2V9.9h-1.8V18h1.8v-4.3c0-1.1.6-1.9 1.6-1.9s1.5.7 1.5 1.9V18h1.8z" fill-rule="evenodd"/></svg><a href="https://www.linkedin.com/in/nathasit-leelasiriwong/" target="_blank" rel="noopener">linkedin.com/in/nathasit-leelasiriwong</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="below">
+    <div class="list">
+      <div class="row"><span class="k">Phone</span><span class="v">+66 86 386 6210</span><button class="copy" data-copy="+66863866210">Copy</button></div>
+      <div class="row"><span class="k">Email</span><span class="v">nathasitlee@gmail.com</span><button class="copy" data-copy="nathasitlee@gmail.com">Copy</button></div>
+      <div class="row"><span class="k">LinkedIn</span><span class="v">linkedin.com/in/nathasit-leelasiriwong</span><button class="copy" data-copy="https://www.linkedin.com/in/nathasit-leelasiriwong/">Copy</button></div>
+      <div class="row"><span class="k">Based in</span><span class="v">Bangkok, Thailand</span><span></span></div>
+    </div>
+    <div class="qrbox">
+      <div id="qr" aria-label="QR code with contact details"></div>
+      <p>Scan to save my contact to your phone</p>
+    </div>
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+document.querySelectorAll('.copy').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const done=t=>{b.textContent=t;setTimeout(()=>b.textContent='Copy',1500)};
+    const sel=()=>{const r=document.createRange();r.selectNodeContents(b.previousElementSibling);const s=getSelection();s.removeAllRanges();s.addRange(r);done('Selected')};
+    try{navigator.clipboard.writeText(b.dataset.copy).then(()=>done('Copied')).catch(sel)}catch(e){sel()}
+  });
+});
+const vcard=["BEGIN:VCARD","VERSION:3.0","N:Leelasiriwong;Nathasit;;;","FN:Nathasit Leelasiriwong","TITLE:Model Validator","ORG:Kiatnakin Phatra Financial Group","TEL;TYPE=CELL:+66863866210","EMAIL:nathasitlee@gmail.com","ADR;TYPE=WORK:;;;Bangkok;;;Thailand","URL:https://www.linkedin.com/in/nathasit-leelasiriwong/","END:VCARD"].join("\n");
+try{const q=qrcode(0,'M');q.addData(vcard);q.make();document.getElementById('qr').innerHTML=q.createSvgTag({cellSize:4,margin:0,scalable:true});}catch(e){document.getElementById('qr').textContent='QR unavailable'}
+</script>
+
+</body>
+</html>
